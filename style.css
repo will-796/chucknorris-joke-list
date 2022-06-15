@@ -1,0 +1,27 @@
+body {
+  background-image: url('./111.jpg');
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(233, 231, 231, 0.4);
+  border-radius: 10px;
+}
+
+/* section {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+
+background-color: rgb(233, 231, 231, 0.4);
+
+}
+
+.btn {
+  width: 80px;
+  height: 30px;
+} */
