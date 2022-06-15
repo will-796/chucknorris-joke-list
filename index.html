@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./apiSearch.js" defer></script>
+  <script src="./script.js" defer></script>
+  <title>chucknorris</title>
+</head>
+<body>
+  <h1 class="title">chucknorris</h1>
+  <label for="category">Choose a category
+    <select name="category" id="category">
+      <option value="random">random</option>
+      <option value="random?category=animal">animal</option>
+      <option value="random?category=career">career</option>
+    <option value="random?category=celebrity">celebrity</option>
+    <option value="random?category=dev">dev</option>
+    <option value="random?category=explicit">explicit</option>
+    <option value="random?category=fashion">fashion</option>
+    <option value="random?category=food">food</option>
+    <option value="random?category=history">history</option>
+    <option value="random?category=money">money</option>
+    <option value="random?category=movie">movie</option>
+    <option value="random?category=music">music</option>
+    <option value="random?category=political">political</option>
+    <option value="random?category=religion">religion</option>
+    <option value="random?category=science">science</option>
+    <option value="random?category=sport">sport</option>
+    <option value="random?category=travel">travel</option>
+  </select>
+</label>
+<button class="btn">Piada</button>
+  <p class="text"></p>
+<div>
+    <button class="add">add to list</button>
+    <button class="save">save list</button>
+    <button class="delete">delete list</button>
+</div>
+  <ol class="ol"></ol>
+</body>
+</html>
