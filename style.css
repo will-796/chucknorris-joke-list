@@ -9,19 +9,47 @@ header {
   border-radius: 10px;
 }
 
+.text {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(233, 231, 231, 0.4);
+}
+
+.lis {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(233, 231, 231, 0.4);
+  margin: 3px;
+  border-radius: 3px;
+
+}
+.label {
+  margin-top: 5%;
+    display: flex;
+   align-items: flex-start;
+   margin-left: 5%;
+
+}
+
+label {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  color:  rgb(0, 0, 0);
+}
+
+.btns {
+  margin-top: 5%;
+    display: flex;
+   align-items: flex-start;
+   margin-left: 5%;
+}
 /* section {
   display: flex;
   flex-direction: column;
-}
+} */
 
-.text {
-  display: flex;
 
-background-color: rgb(233, 231, 231, 0.4);
-
-}
-
-.btn {
+/* .btn {
   width: 80px;
   height: 30px;
 } */
