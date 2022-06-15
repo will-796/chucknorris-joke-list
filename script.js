@@ -14,6 +14,16 @@ btnPiada.addEventListener('click', async () => {
   p.innerText = api.value
 })
 
+const removeLi = () => {
+  ol.childNodes.forEach((element) => {
+    element.addEventListener('click', (event) => {
+      event.target.remove();
+      localStorage.setItem('joke', ol.innerHTML)
+    })
+  })
+}
+
+
 btnAdd.addEventListener('click', () => {
   const li = document.createElement('li');
   li.className = 'lis';
@@ -29,6 +39,7 @@ btnAdd.addEventListener('click', () => {
       ol.appendChild(li);
     }
   }
+  removeLi()
 })
 
 btnSave.addEventListener('click', () => {
@@ -45,6 +56,7 @@ btnDelete.addEventListener('click', () => {
 const restoreList = () => {
   if (localStorage.getItem('joke')) {
     ol.innerHTML = localStorage.getItem('joke');
+    removeLi() 
   }
 }
 
