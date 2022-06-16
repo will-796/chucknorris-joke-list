@@ -1,3 +1,4 @@
+
 const p = document.querySelector('.text');
 const ol = document.querySelector('.ol');
 const btnPiada = document.querySelector('.btn');
@@ -7,6 +8,7 @@ const btnDelete = document.querySelector('.delete');
 const select = document.querySelector('#category');
 
 
+
 btnPiada.addEventListener('click', async () => {
   const category = select.value;
   p.innerText = 'Loading...'
@@ -14,32 +16,24 @@ btnPiada.addEventListener('click', async () => {
   p.innerText = api.value
 })
 
-const removeLi = () => {
-  ol.childNodes.forEach((element) => {
-    element.addEventListener('click', (event) => {
-      event.target.remove();
-      localStorage.setItem('joke', ol.innerHTML)
-    })
-  })
+const bgcolor = (event) => {
+  event.target.classList.toggle('selectli')
 }
 
+const selectLi = () => {
+  ol.childNodes.forEach((element) => {
+    element.addEventListener('click', bgcolor)
+})
+};
 
 btnAdd.addEventListener('click', () => {
-  const li = document.createElement('li');
-  li.className = 'lis';
   if (p.innerText !== '') {
-    if (ol.childNodes.length === 0) {
-      li.innerText = p.innerText;
-      ol.appendChild(li);
-    }
-
-    const arr = ol.childNodes.length - 1;
-    if (p.innerText !== ol.childNodes[arr].innerText) {
-      li.innerText = p.innerText;
-      ol.appendChild(li);
-    }
+    const li = document.createElement('li');
+    li.className = 'lis';
+    li.innerText = p.innerText;
+    ol.appendChild(li);
+    selectLi()
   }
-  removeLi()
 })
 
 btnSave.addEventListener('click', () => {
@@ -49,15 +43,19 @@ btnSave.addEventListener('click', () => {
 })
 
 btnDelete.addEventListener('click', () => {
-  ol.textContent = ''
-  localStorage.clear()
+  const selectli = document.querySelectorAll('.selectli');
+  selectli.forEach((li) => {
+    li.className.includes('selectli') ? li.remove() : null;
+    localStorage.setItem('joke', ol.innerHTML)
+  })
 })
 
 const restoreList = () => {
   if (localStorage.getItem('joke')) {
     ol.innerHTML = localStorage.getItem('joke');
-    removeLi() 
+    selectLi()
   }
 }
 
 restoreList();
+// translate()
